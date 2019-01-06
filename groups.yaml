@@ -1,0 +1,25 @@
+poop:
+  view: yes
+  entities:
+    - group.Hue
+
+Hue:
+  entities:
+    - sensor.kitchen_motion_sensor
+    - sensor.bedroom_motion_sensor
+    - sensor.kitchen_temperature
+    - sensor.bedroom_temperature
+    - sensor.kitchen_light_level
+    - sensor.bedroom_light_level
+    - sensor.bedroom_time
+
+Bed:
+  view: yes
+  entities:
+    - group.SleepNumber
+
+SleepNumber:
+  entities:
+    - binary_sensor.sleepnumber_m7_coleman_is_in_bed
+    - binary_sensor.sleepnumber_m7_liz_is_in_bed
+    - light.under_bed_lightstrip

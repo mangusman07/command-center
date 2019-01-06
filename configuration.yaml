@@ -1,0 +1,268 @@
+#THINGS I WANT TO ADD
+# f.lux 
+#     https://www.home-assistant.io/components/switch.flux/
+# alerts for low battery on hue sensors or switches
+#     https://www.home-assistant.io/components/alert/
+
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret lat
+  longitude: !secret long
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: !secret elev
+  # metric for Metric, imperial for Imperial
+  unit_system: Imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: !secret tz
+  # Customization file
+  customize: !include customize.yaml
+
+# Show links to resources in log and frontend
+# introduction:
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+# reduces volume of recorder logfile
+recorder:
+  # Delete events and states older than 2 weeks
+  purge_interval: 2
+  purge_keep_days: 7
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# Discover some devices automatically
+discovery:
+  ignore:
+    - sonos
+    - samsung_tv
+  enable:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+# conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+# Sensors
+sensor:
+  # Weather prediction
+  - platform: yr
+
+# Text to speech
+tts:
+  - platform: google
+
+# Cloud
+cloud:
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+
+# Sleep Number SleepIQ
+sleepiq:
+  username: !secret primary_email
+  password: !secret sn_pw
+
+# dARK sKY api weather
+weather:
+  - platform: darksky
+    api_key: !secret ds_api
+
+# Nest
+nest:
+  client_id: !secret nest_id
+  client_secret: !secret nest_pw
+  sensors:
+    monitored_conditions:
+      - 'temperature'
+      - 'target'
+      - 'operation_mode'
+
+# Kasa / TP-Link Switches
+switch:
+  - platform: tplink
+    host: 192.168.0.201
+  - platform: tplink
+    host: 192.168.0.202
+
+#hue lights
+sensor:
+  - platform: hue
+    ip_address: 192.168.0.203
+    token: !secret hue_tkn
+
+  - platform: template
+    sensors:
+      kitchen_temperature:
+        friendly_name: 'kitchen temperature'
+        value_template: '{{states.sensor.kitchen_motion_sensor.attributes.temperature}}'
+        unit_of_measurement: °C
+      kitchen_light_level:
+        friendly_name: 'kitchen light level'
+        value_template: '{{states.sensor.kitchen_motion_sensor.attributes.lx}}'
+        unit_of_measurement: lux
+      bedroom_temperature:
+        friendly_name: 'bedroom temperature'
+        value_template: '{{states.sensor.bedroom_motion_sensor.attributes.temperature}}'
+        unit_of_measurement: °C
+      bedroom_light_level:
+        friendly_name: 'bedroom light level'
+        value_template: '{{states.sensor.bedroom_motion_sensor.attributes.lx}}'
+        unit_of_measurement: lux
+      bedroom_time:
+        friendly_name: 'bedroom time'
+        value_template: '{{states.sensor.bedroom_motion_sensor.attributes.last_updated}}'
+        unit_of_measurement: time
+
+
+#updater for custom hue sensors
+#custom_updater:
+#component_urls:
+#  - https://raw.githubusercontent.com/robmarkcole/Hue-sensors-HASS/master/custom_updater.json
+
+# Pushbullet notify me of bed sensor
+notify me:
+  platform: pushbullet
+  api_key: !secret push_api
+  name: mypushbullet
+
+#--------------------------------------------------
+
+automation:
+  - alias: ColemanInBed
+    trigger:
+      platform: state
+      entity_id: binary_sensor.sleepnumber_m7_coleman_is_in_bed
+      to: 'on'
+    action:
+      service: notify.mypushbullet
+      data_template:
+        title: "Coleman Bed Sensor"
+        message: "Coleman in bed"
+  - alias: ColemanOutBed
+    trigger:
+      platform: state
+      entity_id: binary_sensor.sleepnumber_m7_coleman_is_in_bed
+      to: 'off'
+    action:
+      service: notify.mypushbullet
+      data_template:
+        title: "Coleman Bed Sensor"
+        message: "Coleman out of bed"
+
+
+#--------------------------------------------------
+
+#fuckin around with lights
+
+  - alias: Turn on kitchen light when there is movement
+    trigger:
+      platform: state
+      entity_id: sensor.kitchen_motion_sensor
+      to: 'on'
+    action:
+      service: homeassistant.turn_on
+      entity_id: light.kitchen
+
+  - alias: Turn off kitchen light 1 minutes after last movement
+    trigger:
+      platform: state
+      entity_id: sensor.kitchen_motion_sensor
+      to: 'off'
+      for:
+        minutes: 1
+    action:
+      service: homeassistant.turn_off
+      entity_id: light.kitchen
+      data: 
+        transition: 7
+
+# You can also restrict lights from turning on based on 
+#   time of day and implement transitions for 
+#   fading lights on and off.
+
+
+# Here is Bedroom Lights: 
+#    Turn on with Hue sensor bright unless either person in bed
+  - alias: Bedroom Lights Sensor Awake Time
+    trigger:
+      platform: state
+      entity_id: sensor.bedroom_motion_sensor
+      to: 'on'
+    condition:
+      condition: and
+      conditions:
+        - condition: time
+          after: '07:00:00'
+          before: '23:00:00'
+        - condition: state
+          entity_id: binary_sensor.sleepnumber_m7_coleman_is_in_bed
+          state: 'off'
+        - condition: state
+          entity_id: binary_sensor.sleepnumber_m7_liz_is_in_bed
+          state: 'off'
+    action:
+      service: homeassistant.turn_on
+      entity_id: light.bedroom
+
+
+  - alias: Bedroom Lights Sensor Awake Time
+    trigger:
+      platform: state
+      entity_id: sensor.bedroom_motion_sensor
+      to: 'on'
+    condition:
+      condition: and
+      conditions:
+        - condition: time
+          after: '07:00:00'
+          before: '23:00:00'
+        - condition: state
+          entity_id: binary_sensor.sleepnumber_m7_coleman_is_in_bed
+          state: 'off'
+        - condition: state
+          entity_id: binary_sensor.sleepnumber_m7_liz_is_in_bed
+          state: 'off'
+    action:
+      service: homeassistant.turn_on
+      entity_id: light.bedroom
+
+  - alias: Turn off bedroom light 1 minutes after last movement
+    trigger:
+      platform: state
+      entity_id: sensor.bedroom_motion_sensor
+      to: 'off'
+      for:
+        minutes: 1
+    action:
+      service: homeassistant.turn_off
+      entity_id: light.bedroom
+      data: 
+        transition: 4

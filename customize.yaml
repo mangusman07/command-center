@@ -1,0 +1,9 @@
+binary_sensor.sleepnumber_m7_liz_is_in_bed:
+  friendly_name: LizBed
+binary_sensor.sleepnumber_m7_coleman_is_in_bed:
+  device_class: occupancy
+  friendly_name: ColemanBed
+sensor.sleepnumber_m7_coleman_sleepnumber:
+  friendly_name: Coleman SleepNumber
+sensor.sleepnumber_m7_liz_sleepnumber:
+  friendly_name: Liz SleepNumber
