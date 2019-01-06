@@ -188,8 +188,10 @@ automation:
       entity_id: sensor.kitchen_motion_sensor
       to: 'on'
     action:
-      service: homeassistant.turn_on
-      entity_id: light.kitchen
+      - service: homeassistant.turn_on
+        data:
+          entity_id: light.kitchen
+          brightness: 255
 
   - alias: Turn off kitchen light 1 minutes after last movement
     trigger:
