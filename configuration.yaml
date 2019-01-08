@@ -52,6 +52,7 @@ discovery:
   ignore:
     - sonos
     - samsung_tv
+    - philips_hue
   enable:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
@@ -112,12 +113,18 @@ switch:
   - platform: tplink
     host: 192.168.0.202
 
+# Components
+hue:
+  bridges: 
+    - host: 192.168.0.203
+      allow_unreachable: true
+      allow_hue_groups: true
+
 #hue lights
 sensor:
   - platform: hue
     ip_address: 192.168.0.203
     token: !secret hue_tkn
-
   - platform: template
     sensors:
       kitchen_temperature:
@@ -140,6 +147,7 @@ sensor:
         friendly_name: 'bedroom time'
         value_template: '{{states.sensor.bedroom_motion_sensor.attributes.last_updated}}'
         unit_of_measurement: time
+
 
 
 #updater for custom hue sensors

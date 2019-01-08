@@ -67,7 +67,10 @@
 # Here is Bedroom Lights: 
 #    Turn on with Hue sensor bright unless either person in bed
 
-- alias: Bedroom Lights Sensor Awake Time
+# Bed Daytime - full bright with motion
+#    Turn on lights full bright between 7am and 11 pm
+#    and if bed is empty
+- alias: Bedroom Sensor Day Time
   trigger:
     platform: state
     entity_id: sensor.bedroom_motion_sensor
@@ -76,7 +79,7 @@
     condition: and
     conditions:
       - condition: time
-        after: '07:00:00'
+        after: '06:30:00'
         before: '23:00:00'
       - condition: state
         entity_id: binary_sensor.sleepnumber_m7_coleman_is_in_bed
@@ -85,10 +88,16 @@
         entity_id: binary_sensor.sleepnumber_m7_liz_is_in_bed
         state: 'off'
   action:
-    service: homeassistant.turn_on
-    entity_id: light.bedroom
+    - service: homeassistant.turn_on
+      data:
+        entity_id: light.bedroom
+        brightness: 255
 
-- alias: Bedroom Lights Sensor Awake Time
+# Bed Nighttime - underbed dim with motion
+#    Turn on lights full bright between 9pm and 6:30 am
+#    and if at least 1 person in bed
+#    and if bed lights were off
+- alias: Bedroom Sensor Day Time
   trigger:
     platform: state
     entity_id: sensor.bedroom_motion_sensor
@@ -97,24 +106,45 @@
     condition: and
     conditions:
       - condition: time
-        after: '07:00:00'
-        before: '23:00:00'
+        after: '21:00:00'
+        before: '06:30:00'
       - condition: state
-        entity_id: binary_sensor.sleepnumber_m7_coleman_is_in_bed
+        entity_id: light.under_bed_lightstrip
         state: 'off'
-      - condition: state
-        entity_id: binary_sensor.sleepnumber_m7_liz_is_in_bed
-        state: 'off'
+      - condition: or
+        conditions:
+        - condition: state
+          entity_id: binary_sensor.sleepnumber_m7_coleman_is_in_bed
+          state: 'on'
+        - condition: state
+          entity_id: binary_sensor.sleepnumber_m7_liz_is_in_bed
+          state: 'on'
   action:
-    service: homeassistant.turn_on
-    entity_id: light.bedroom
-- alias: Turn off bedroom light 1 minutes after last movement
+    - service: homeassistant.turn_on
+      data:
+        entity_id: light.under_bed_lightstrip
+        rgb_color: [255,0,0]
+        brightness: 5
+
+- alias: Bedroom light OFF 1 minutes after last movement if bed empty
   trigger:
     platform: state
     entity_id: sensor.bedroom_motion_sensor
     to: 'off'
     for:
       minutes: 1
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        after: '06:30:00'
+        before: '23:00:00'
+      - condition: state
+        entity_id: binary_sensor.sleepnumber_m7_coleman_is_in_bed
+        state: 'off'
+      - condition: state
+        entity_id: binary_sensor.sleepnumber_m7_liz_is_in_bed
+        state: 'off'
   action:
     service: homeassistant.turn_off
     entity_id: light.bedroom
