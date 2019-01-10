@@ -82,6 +82,10 @@ tts:
 # Cloud
 cloud:
 
+
+# CONTROLS
+input_number: !include input-numbers.yaml
+
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml

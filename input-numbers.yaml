@@ -1,0 +1,17 @@
+# credit to https://git.ethitter.com/open-source/Home-Assistant-Config/blob/master/input-numbers.yaml
+
+brightness_kitchen:
+  name: Brightness
+  initial: 1
+  min: 1
+  max: 255
+  step: 1
+  mode: slider
+
+brightness_bedroom:
+  name: Brightness2
+  initial: 1
+  min: 1
+  max: 255
+  step: 1
+  mode: slider

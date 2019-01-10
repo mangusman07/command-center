@@ -1,6 +1,8 @@
 poop:
   view: yes
   entities:
+    - group.Kitchen
+    - group.Bedroom
     - group.Hue
 
 Hue:
@@ -23,3 +25,16 @@ SleepNumber:
     - binary_sensor.sleepnumber_m7_coleman_is_in_bed
     - binary_sensor.sleepnumber_m7_liz_is_in_bed
     - light.under_bed_lightstrip
+
+Kitchen:
+  name: Kitchen
+  entities:
+    - light.kitchen
+    - input_number.brightness_kitchen
+
+Bedroom:
+  name: Bedroom
+  entities:
+    - light.bedroom
+    - input_number.brightness_bedroom
+
