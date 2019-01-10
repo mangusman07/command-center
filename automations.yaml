@@ -34,19 +34,83 @@
 
 #--------------------------------------------------
 
-#fuckin around with lights
+# LIGHTING
 
-- alias: Turn on kitchen light when there is movement
+- alias: Kitchen Sensor Daytime
   trigger:
     platform: state
     entity_id: sensor.kitchen_motion_sensor
     to: 'on'
+  condition:
+#between day hours (6:15am-7pm)
+    - condition: time
+      after: '06:15:00'
+      before: '19:00:00'  
   action:
     - service: homeassistant.turn_on
       data:
         entity_id: light.kitchen
         brightness: 255
-- alias: Turn off kitchen light 1 minutes after last movement
+
+#kitchen sensor when no one is in bed
+- alias: Kitchen Sensor evening
+  trigger:
+    platform: state
+    entity_id: sensor.kitchen_motion_sensor
+    to: 'on'
+  condition:
+    condition: and
+    conditions:
+# if between evening hours (7pm-11pm) and no one is in bed (if someone in bed, it goes to nightlight mode)
+      - condition: time
+        after: '19:00:0'
+        before: '23:00:00'
+      - condition: state
+        entity_id: binary_sensor.sleepnumber_m7_coleman_is_in_bed
+        state: 'off'
+      - condition: state
+        entity_id: binary_sensor.sleepnumber_m7_liz_is_in_bed
+        state: 'off'  
+  action:
+    - service: homeassistant.turn_on
+      data:
+        entity_id: light.kitchen
+        brightness: 200
+
+
+- alias: Kitchen Sensor Nightlight
+  trigger:
+    platform: state
+    entity_id: sensor.kitchen_motion_sensor
+    to: 'on'
+  condition:
+# if between evening hours (7pm-11pm) and anyone is in bed, OR if night (11pm-6:15am)  
+    condition: or
+    conditions:
+      - condition: time
+        after: '23:00:00'
+        before: '06:30:00'
+      - condition: and
+        conditions:
+          - condition: time
+            after: '19:00:00'
+            before: '23:00:00'
+          - condition: or
+            conditions:
+            - condition: state
+              entity_id: binary_sensor.sleepnumber_m7_coleman_is_in_bed
+              state: 'on'
+            - condition: state
+              entity_id: binary_sensor.sleepnumber_m7_liz_is_in_bed
+              state: 'on' 
+  action:
+    - service: homeassistant.turn_on
+      data:
+        entity_id: light.kitchen
+        brightness: 30
+
+
+- alias: Kitchen Light Sensor Auto-Off
   trigger:
     platform: state
     entity_id: sensor.kitchen_motion_sensor
@@ -57,7 +121,7 @@
     service: homeassistant.turn_off
     entity_id: light.kitchen
     data: 
-      transition: 7
+      transition: 5
 
 # You can also restrict lights from turning on based on 
 #   time of day and implement transitions for 
