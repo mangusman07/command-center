@@ -1,14 +1,3 @@
-- id: '1544890965790'
-  alias: New Automation
-  trigger:
-  - entity_id: binary_sensor.sleepnumber_m7_coleman_is_in_bed
-    platform: state
-    to: '1'
-  condition: []
-  action:
-  - service: notify.mypushbullet
-
-
 - alias: ColemanInBed
   trigger:
     platform: state
