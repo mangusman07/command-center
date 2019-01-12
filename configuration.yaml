@@ -70,11 +70,6 @@ map:
 # Track the sun
 sun:
 
-# Sensors
-sensor:
-  # Weather prediction
-  - platform: yr
-
 # Text to speech
 tts:
   - platform: google
@@ -124,11 +119,16 @@ hue:
       allow_unreachable: true
       allow_hue_groups: true
 
-#hue lights
 sensor:
+  # Weather prediction
+  - platform: yr
+
+  #hue hub
   - platform: hue
     ip_address: 192.168.0.203
     token: !secret hue_tkn
+
+  #hue motion sensors #FIXME add the remainder of the variables
   - platform: template
     sensors:
       kitchen_temperature:
