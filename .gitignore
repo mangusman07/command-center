@@ -11,3 +11,5 @@ home-assistant.log
 .node-red/node-red-contrib-home-assistant.json
 .node-red/node_modules/
 .node-red/package-lock.json
+.node-red/*.backup
+.node-red/flows_raspberrypi_cred*
