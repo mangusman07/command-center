@@ -753,6 +753,92 @@
      "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-node-twitter/27-twitter.js"
     }
    }
+  },
+  "node-red-contrib-stoptimer": {
+   "name": "node-red-contrib-stoptimer",
+   "version": "0.0.7",
+   "local": true,
+   "nodes": {
+    "stoptimer": {
+     "name": "stoptimer",
+     "types": [
+      "stoptimer"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-stoptimer",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-contrib-stoptimer/stoptimer.js"
+    }
+   }
+  },
+  "node-red-contrib-bigtimer": {
+   "name": "node-red-contrib-bigtimer",
+   "version": "2.0.8",
+   "local": false,
+   "nodes": {
+    "bigtimer": {
+     "name": "bigtimer",
+     "types": [
+      "bigtimer"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-bigtimer",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-contrib-bigtimer/bigtimer.js"
+    }
+   }
+  },
+  "node-red-contrib-time-range-switch": {
+   "name": "node-red-contrib-time-range-switch",
+   "version": "0.6.1",
+   "local": false,
+   "nodes": {
+    "time-range-switch": {
+     "name": "time-range-switch",
+     "types": [
+      "time-range-switch"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-time-range-switch",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-contrib-time-range-switch/index.js"
+    }
+   }
+  },
+  "node-red-contrib-hue": {
+   "name": "node-red-contrib-hue",
+   "version": "0.0.5",
+   "local": false,
+   "nodes": {
+    "hue": {
+     "name": "hue",
+     "types": [
+      "Hue Pull",
+      "Hue Set"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-hue",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-contrib-hue/hue.js"
+    }
+   }
+  },
+  "node-red-contrib-looptimer": {
+   "name": "node-red-contrib-looptimer",
+   "version": "0.0.8",
+   "local": false,
+   "nodes": {
+    "looptimer": {
+     "name": "looptimer",
+     "types": [
+      "looptimer"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-looptimer",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-contrib-looptimer/looptimer.js"
+    }
+   }
   }
  },
  "_credentialSecret": "a6c218d96c245c1746d1f327130dd1088b1d3bf3c52f4e02fb68b68db52700d9",
@@ -760,7 +846,7 @@
   "admin": {
    "editor": {
     "view": {
-     "view-grid-size": 20,
+     "view-grid-size": "20",
      "view-node-status": true,
      "view-show-tips": true,
      "view-snap-grid": true,
