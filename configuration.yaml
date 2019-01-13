@@ -3,6 +3,8 @@
 #     https://www.home-assistant.io/components/switch.flux/
 # alerts for low battery on hue sensors or switches
 #     https://www.home-assistant.io/components/alert/
+# Open Hardware tracking of Pi performance and speeds and temps
+#      https://www.home-assistant.io/components/sensor.openhardwaremonitor/
 
 homeassistant:
   # Name of the location where Home Assistant is running
@@ -140,6 +142,17 @@ sensor:
 #      - unique_clients
 #      - unique_domains
 #      - clients_ever_seen
+
+  # CPU speed
+  - platform: cpuspeed
+
+  # system monitor
+  - platform: systemmonitor
+    resources:
+      - type: disk_use_percent
+        arg: /home
+      - type: memory_free
+      - type: processor_use
 
   #hue hub
   - platform: hue
