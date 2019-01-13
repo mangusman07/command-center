@@ -1,0 +1,772 @@
+{
+ "nodes": {
+  "node-red": {
+   "name": "node-red",
+   "version": "0.19.5",
+   "local": false,
+   "nodes": {
+    "sentiment": {
+     "name": "sentiment",
+     "types": [
+      "sentiment"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/analysis/72-sentiment.js"
+    },
+    "inject": {
+     "name": "inject",
+     "types": [
+      "inject"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/core/20-inject.js"
+    },
+    "catch": {
+     "name": "catch",
+     "types": [
+      "catch"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/core/25-catch.js"
+    },
+    "status": {
+     "name": "status",
+     "types": [
+      "status"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/core/25-status.js"
+    },
+    "debug": {
+     "name": "debug",
+     "types": [
+      "debug"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/core/58-debug.js"
+    },
+    "link": {
+     "name": "link",
+     "types": [
+      "link in",
+      "link out"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/core/60-link.js"
+    },
+    "exec": {
+     "name": "exec",
+     "types": [
+      "exec"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/core/75-exec.js"
+    },
+    "function": {
+     "name": "function",
+     "types": [
+      "function"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/core/80-function.js"
+    },
+    "template": {
+     "name": "template",
+     "types": [
+      "template"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/core/80-template.js"
+    },
+    "delay": {
+     "name": "delay",
+     "types": [
+      "delay"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/core/89-delay.js"
+    },
+    "trigger": {
+     "name": "trigger",
+     "types": [
+      "trigger"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/core/89-trigger.js"
+    },
+    "comment": {
+     "name": "comment",
+     "types": [
+      "comment"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/core/90-comment.js"
+    },
+    "unknown": {
+     "name": "unknown",
+     "types": [
+      "unknown"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/core/98-unknown.js"
+    },
+    "rpi-gpio": {
+     "name": "rpi-gpio",
+     "types": [
+      "rpi-gpio in",
+      "rpi-gpio out",
+      "rpi-mouse",
+      "rpi-keyboard"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/hardware/36-rpi-gpio.js"
+    },
+    "tls": {
+     "name": "tls",
+     "types": [
+      "tls-config"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/io/05-tls.js"
+    },
+    "mqtt": {
+     "name": "mqtt",
+     "types": [
+      "mqtt in",
+      "mqtt out",
+      "mqtt-broker"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/io/10-mqtt.js"
+    },
+    "httpin": {
+     "name": "httpin",
+     "types": [
+      "http in",
+      "http response"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/io/21-httpin.js"
+    },
+    "httprequest": {
+     "name": "httprequest",
+     "types": [
+      "http request"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/io/21-httprequest.js"
+    },
+    "websocket": {
+     "name": "websocket",
+     "types": [
+      "websocket in",
+      "websocket out",
+      "websocket-listener",
+      "websocket-client"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/io/22-websocket.js"
+    },
+    "watch": {
+     "name": "watch",
+     "types": [
+      "watch"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/io/23-watch.js"
+    },
+    "tcpin": {
+     "name": "tcpin",
+     "types": [
+      "tcp in",
+      "tcp out",
+      "tcp request"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/io/31-tcpin.js"
+    },
+    "udp": {
+     "name": "udp",
+     "types": [
+      "udp in",
+      "udp out"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/io/32-udp.js"
+    },
+    "switch": {
+     "name": "switch",
+     "types": [
+      "switch"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/logic/10-switch.js"
+    },
+    "change": {
+     "name": "change",
+     "types": [
+      "change"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/logic/15-change.js"
+    },
+    "range": {
+     "name": "range",
+     "types": [
+      "range"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/logic/16-range.js"
+    },
+    "split": {
+     "name": "split",
+     "types": [
+      "split",
+      "join"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/logic/17-split.js"
+    },
+    "sort": {
+     "name": "sort",
+     "types": [
+      "sort"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/logic/18-sort.js"
+    },
+    "batch": {
+     "name": "batch",
+     "types": [
+      "batch"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/logic/19-batch.js"
+    },
+    "CSV": {
+     "name": "CSV",
+     "types": [
+      "csv"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/parsers/70-CSV.js"
+    },
+    "HTML": {
+     "name": "HTML",
+     "types": [
+      "html"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/parsers/70-HTML.js"
+    },
+    "JSON": {
+     "name": "JSON",
+     "types": [
+      "json"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/parsers/70-JSON.js"
+    },
+    "XML": {
+     "name": "XML",
+     "types": [
+      "xml"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/parsers/70-XML.js"
+    },
+    "YAML": {
+     "name": "YAML",
+     "types": [
+      "yaml"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/parsers/70-YAML.js"
+    },
+    "tail": {
+     "name": "tail",
+     "types": [
+      "tail"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/storage/28-tail.js"
+    },
+    "file": {
+     "name": "file",
+     "types": [
+      "file",
+      "file in"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/usr/lib/node_modules/node-red/nodes/core/storage/50-file.js"
+    }
+   }
+  },
+  "node-red-node-rbe": {
+   "name": "node-red-node-rbe",
+   "version": "0.2.4",
+   "local": true,
+   "nodes": {
+    "rbe": {
+     "name": "rbe",
+     "types": [
+      "rbe"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-rbe",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-node-rbe/rbe.js"
+    }
+   }
+  },
+  "node-red-contrib-home-assistant": {
+   "name": "node-red-contrib-home-assistant",
+   "version": "0.3.2",
+   "local": true,
+   "nodes": {
+    "server": {
+     "name": "server",
+     "types": [
+      "server"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-home-assistant",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-contrib-home-assistant/nodes/config-server/config-server.js"
+    },
+    "server-events": {
+     "name": "server-events",
+     "types": [
+      "server-events"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-home-assistant",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-contrib-home-assistant/nodes/server-events-all/server-events-all.js"
+    },
+    "server-state-changed": {
+     "name": "server-state-changed",
+     "types": [
+      "server-state-changed"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-home-assistant",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-contrib-home-assistant/nodes/server-events-state-changed/server-events-state-changed.js"
+    },
+    "trigger-state": {
+     "name": "trigger-state",
+     "types": [
+      "trigger-state"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-home-assistant",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-contrib-home-assistant/nodes/trigger-state/trigger-state.js"
+    },
+    "poll-state": {
+     "name": "poll-state",
+     "types": [
+      "poll-state"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-home-assistant",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-contrib-home-assistant/nodes/poll-state/poll-state.js"
+    },
+    "api-call-service": {
+     "name": "api-call-service",
+     "types": [
+      "api-call-service"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-home-assistant",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-contrib-home-assistant/nodes/api_call-service/api_call-service.js"
+    },
+    "api-current-state": {
+     "name": "api-current-state",
+     "types": [
+      "api-current-state"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-home-assistant",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-contrib-home-assistant/nodes/api_current-state/api_current-state.js"
+    },
+    "api-get-history": {
+     "name": "api-get-history",
+     "types": [
+      "api-get-history"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-home-assistant",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-contrib-home-assistant/nodes/api_get-history/api_get-history.js"
+    },
+    "api-render-template": {
+     "name": "api-render-template",
+     "types": [
+      "api-render-template"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-home-assistant",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-contrib-home-assistant/nodes/api_render-template/api_render-template.js"
+    }
+   }
+  },
+  "node-red-contrib-ibm-watson-iot": {
+   "name": "node-red-contrib-ibm-watson-iot",
+   "version": "0.2.8",
+   "local": true,
+   "nodes": {
+    "wiotp": {
+     "name": "wiotp",
+     "types": [
+      "wiotp-credentials",
+      "wiotp in",
+      "wiotp out"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-ibm-watson-iot",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-contrib-ibm-watson-iot/application/wiotp.js"
+    }
+   }
+  },
+  "node-red-contrib-play-audio": {
+   "name": "node-red-contrib-play-audio",
+   "version": "2.3.2",
+   "local": true,
+   "nodes": {
+    "play-audio": {
+     "name": "play-audio",
+     "types": [
+      "play audio"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-play-audio",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-contrib-play-audio/play-audio.js"
+    }
+   }
+  },
+  "node-red-node-email": {
+   "name": "node-red-node-email",
+   "version": "0.1.29",
+   "local": true,
+   "nodes": {
+    "email": {
+     "name": "email",
+     "types": [
+      "e-mail",
+      "e-mail in"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-email",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-node-email/61-email.js"
+    }
+   }
+  },
+  "node-red-node-feedparser": {
+   "name": "node-red-node-feedparser",
+   "version": "0.1.14",
+   "local": true,
+   "nodes": {
+    "feedparse": {
+     "name": "feedparse",
+     "types": [
+      "feedparse"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-feedparser",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-node-feedparser/32-feedparse.js"
+    }
+   }
+  },
+  "node-red-node-ping": {
+   "name": "node-red-node-ping",
+   "version": "0.0.16",
+   "local": true,
+   "nodes": {
+    "ping": {
+     "name": "ping",
+     "types": [
+      "ping"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-ping",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-node-ping/88-ping.js"
+    }
+   }
+  },
+  "node-red-node-random": {
+   "name": "node-red-node-random",
+   "version": "0.1.2",
+   "local": true,
+   "nodes": {
+    "random": {
+     "name": "random",
+     "types": [
+      "random"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-random",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-node-random/random.js"
+    }
+   }
+  },
+  "node-red-contrib-huemagic": {
+   "name": "node-red-contrib-huemagic",
+   "version": "1.9.0",
+   "local": true,
+   "nodes": {
+    "hue-bridge": {
+     "name": "hue-bridge",
+     "types": [
+      "hue-bridge"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-huemagic",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-contrib-huemagic/red/hue-bridge-config.js"
+    },
+    "hue-bridge-node": {
+     "name": "hue-bridge-node",
+     "types": [
+      "hue-bridge-node"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-huemagic",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-contrib-huemagic/red/hue-bridge.js"
+    },
+    "hue-light": {
+     "name": "hue-light",
+     "types": [
+      "hue-light"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-huemagic",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-contrib-huemagic/red/hue-light.js"
+    },
+    "hue-group": {
+     "name": "hue-group",
+     "types": [
+      "hue-group"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-huemagic",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-contrib-huemagic/red/hue-group.js"
+    },
+    "hue-scene": {
+     "name": "hue-scene",
+     "types": [
+      "hue-scene"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-huemagic",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-contrib-huemagic/red/hue-scene.js"
+    },
+    "hue-tap": {
+     "name": "hue-tap",
+     "types": [
+      "hue-tap"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-huemagic",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-contrib-huemagic/red/hue-tap.js"
+    },
+    "hue-switch": {
+     "name": "hue-switch",
+     "types": [
+      "hue-switch"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-huemagic",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-contrib-huemagic/red/hue-switch.js"
+    },
+    "hue-motion": {
+     "name": "hue-motion",
+     "types": [
+      "hue-motion"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-huemagic",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-contrib-huemagic/red/hue-motion.js"
+    },
+    "hue-temperature": {
+     "name": "hue-temperature",
+     "types": [
+      "hue-temperature"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-huemagic",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-contrib-huemagic/red/hue-temperature.js"
+    },
+    "hue-brightness": {
+     "name": "hue-brightness",
+     "types": [
+      "hue-brightness"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-huemagic",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-contrib-huemagic/red/hue-brightness.js"
+    }
+   }
+  },
+  "node-red-node-serialport": {
+   "name": "node-red-node-serialport",
+   "version": "0.6.8",
+   "local": true,
+   "nodes": {
+    "serialport": {
+     "name": "serialport",
+     "types": [
+      "serial in",
+      "serial out",
+      "serial request",
+      "serial-port"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-serialport",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-node-serialport/25-serial.js"
+    }
+   }
+  },
+  "node-red-node-smooth": {
+   "name": "node-red-node-smooth",
+   "version": "0.1.0",
+   "local": true,
+   "nodes": {
+    "smooth": {
+     "name": "smooth",
+     "types": [
+      "smooth"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-smooth",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-node-smooth/17-smooth.js"
+    }
+   }
+  },
+  "node-red-node-twitter": {
+   "name": "node-red-node-twitter",
+   "version": "0.1.15",
+   "local": true,
+   "nodes": {
+    "twitter": {
+     "name": "twitter",
+     "types": [
+      "twitter-credentials",
+      "twitter in",
+      "twitter out"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-twitter",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-node-twitter/27-twitter.js"
+    }
+   }
+  }
+ },
+ "_credentialSecret": "a6c218d96c245c1746d1f327130dd1088b1d3bf3c52f4e02fb68b68db52700d9",
+ "users": {
+  "admin": {
+   "editor": {
+    "view": {
+     "view-grid-size": 20,
+     "view-node-status": true,
+     "view-show-tips": true,
+     "view-snap-grid": true,
+     "view-show-grid": true
+    }
+   }
+  }
+ }
+}

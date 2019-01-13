@@ -5,3 +5,9 @@ home-assistant_v2.db
 home-assistant.log
 .storage/*
 .uuid*
+.node-red/.config.json.backup
+.node-red/.flows_raspberrypi.json.backup
+.node-red/.sessions.json
+.node-red/node-red-contrib-home-assistant.json
+.node-red/node_modules/
+.node-red/package-lock.json
