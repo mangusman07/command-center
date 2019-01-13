@@ -25,11 +25,16 @@ homeassistant:
   # Customization file
   customize: !include customize.yaml
 
+http:
+  api_password: !secret http_password
+  login_attempts_threshold: 8
+
 # Show links to resources in log and frontend
 # introduction:
 
 # Enables the frontend
 frontend:
+
 
 # Enables configuration UI
 config:
@@ -52,6 +57,13 @@ recorder:
 updater:
   # Optional, allows Home Assistant developers to focus on popular components.
   # include_used_components: true
+
+panel_iframe:
+ nodered:
+   title: 'Node-Red'
+   icon: 'mdi:shuffle-variant'
+   url: !secret node-red_url
+
 
 # Discover some devices automatically
 discovery:
@@ -114,14 +126,14 @@ nest:
 # Kasa / TP-Link Switches
 switch:
   - platform: tplink
-    host: 192.168.0.201
+    host: !secret switch1_ip
   - platform: tplink
-    host: 192.168.0.202
+    host: !secret switch2_ip
 
 # Components
 hue:
   bridges: 
-    - host: 192.168.0.203
+    - host: !secret hue_bridge_ip
       allow_unreachable: true
       allow_hue_groups: true
 
