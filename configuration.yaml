@@ -5,6 +5,10 @@
 #     https://www.home-assistant.io/components/alert/
 # Open Hardware tracking of Pi performance and speeds and temps
 #      https://www.home-assistant.io/components/sensor.openhardwaremonitor/
+# NODE RED!!!!!!!!!
+# better icons
+#     https://materialdesignicons.com/
+
 
 homeassistant:
   # Name of the location where Home Assistant is running
