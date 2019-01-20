@@ -774,7 +774,7 @@
   "node-red-contrib-bigtimer": {
    "name": "node-red-contrib-bigtimer",
    "version": "2.0.8",
-   "local": false,
+   "local": true,
    "nodes": {
     "bigtimer": {
      "name": "bigtimer",
@@ -791,7 +791,7 @@
   "node-red-contrib-time-range-switch": {
    "name": "node-red-contrib-time-range-switch",
    "version": "0.6.1",
-   "local": false,
+   "local": true,
    "nodes": {
     "time-range-switch": {
      "name": "time-range-switch",
@@ -808,7 +808,7 @@
   "node-red-contrib-hue": {
    "name": "node-red-contrib-hue",
    "version": "0.0.5",
-   "local": false,
+   "local": true,
    "nodes": {
     "hue": {
      "name": "hue",
@@ -826,7 +826,7 @@
   "node-red-contrib-looptimer": {
    "name": "node-red-contrib-looptimer",
    "version": "0.0.8",
-   "local": false,
+   "local": true,
    "nodes": {
     "looptimer": {
      "name": "looptimer",
