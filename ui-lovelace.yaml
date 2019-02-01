@@ -1,0 +1,24 @@
+views:
+  - title: main
+    icon: mdi:home-outline
+    cards:
+
+    - type: glance
+      title: Lights
+      show_name: true
+      show_state: true
+      entities:
+        - light.kitchen
+        - light.bedroom
+
+    - type: entities
+      title: Sample
+      show_header_toggle: true
+      entities:
+        - type: call-service
+          icon: mdi:power
+          name: Kitchen Light
+          action_name: Toggle light
+          service: light.toggle
+          service_data:
+            entity_id: light.kitchen
