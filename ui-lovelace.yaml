@@ -11,6 +11,13 @@ views:
         - light.kitchen
         - light.bedroom
 
+
+    - type: "custom:button-card"
+      entity: switch.living_room_lamp
+      icon: mdi:sofa
+      color: auto
+      name: Living room lamp
+
     - type: entities
       title: Sample
       show_header_toggle: true
@@ -22,3 +29,8 @@ views:
           service: light.toggle
           service_data:
             entity_id: light.kitchen
+        - type: divider
+        - type: weblink
+          name: Old UI frontend
+          url: http://192.168.0.111:8123/states
+          icon: mdi:home-assistant

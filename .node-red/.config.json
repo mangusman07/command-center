@@ -839,6 +839,23 @@
      "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-contrib-looptimer/looptimer.js"
     }
    }
+  },
+  "node-red-contrib-startup-trigger": {
+   "name": "node-red-contrib-startup-trigger",
+   "version": "0.1.0",
+   "local": true,
+   "nodes": {
+    "trigger": {
+     "name": "trigger",
+     "types": [
+      "start-up-trigger"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-startup-trigger",
+     "file": "/home/homeassistant/.homeassistant/.node-red/node_modules/node-red-contrib-startup-trigger/trigger/trigger.js"
+    }
+   }
   }
  },
  "_credentialSecret": "a6c218d96c245c1746d1f327130dd1088b1d3bf3c52f4e02fb68b68db52700d9",

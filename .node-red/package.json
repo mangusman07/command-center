@@ -10,6 +10,7 @@
     "node-red-contrib-ibm-watson-iot": "^0.2.8",
     "node-red-contrib-looptimer": "0.0.8",
     "node-red-contrib-play-audio": "^2.3.2",
+    "node-red-contrib-startup-trigger": "~0.1.0",
     "node-red-contrib-stoptimer": "0.0.7",
     "node-red-contrib-time-range-switch": "~0.6.1",
     "node-red-node-ping": "0.0.16",
