@@ -1,0 +1,242 @@
+{
+    "data": {
+        "config": {
+            "title": "Home Assistant - Welcome",
+            "views": [
+                {
+                    "badges": [
+                        "binary_sensor.living_room_thermostat_online",
+                        "binary_sensor.living_room_thermostat_is_using_emergency_heat",
+                        "binary_sensor.home_away",
+                        "binary_sensor.living_room_thermostat_is_locked",
+                        "binary_sensor.living_room_thermostat_has_leaf",
+                        "binary_sensor.living_room_thermostat_fan",
+                        "sensor.pi_hole_ads_blocked_today",
+                        "sensor.yr_symbol",
+                        "sensor.memory_free",
+                        "sensor.google_pixel_xl",
+                        "sensor.num_in_master_bed",
+                        "sensor.living_room_thermostat_temperature",
+                        "sensor.living_room_thermostat_target",
+                        "sensor.living_room_thermostat_operation_mode",
+                        "sensor.cpu_speed",
+                        "sensor.processor_use",
+                        "sensor.sleepnumber_m7_coleman_sleepnumber",
+                        "sensor.disk_use_percent_home",
+                        "sensor.kitchen_switch",
+                        "sensor.bed_occupied",
+                        "sensor.pi_hole_domains_blocked",
+                        "sensor.sleepnumber_m7_liz_sleepnumber",
+                        "sensor.wireless_router_archer_c7_bytes_received",
+                        "sensor.wireless_router_archer_c7_packets_sec_sent",
+                        "sensor.wireless_router_archer_c7_packets_sent",
+                        "sensor.wireless_router_archer_c7_kbyte_sec_received",
+                        "sensor.wireless_router_archer_c7_kbyte_sec_sent",
+                        "sensor.wireless_router_archer_c7_bytes_sent",
+                        "sensor.wireless_router_archer_c7_packets_sec_received",
+                        "sensor.wireless_router_archer_c7_packets_received",
+                        "sun.sun"
+                    ],
+                    "cards": [
+                        {
+                            "entities": [
+                                "sensor.kitchen_motion_sensor",
+                                "sensor.bedroom_motion_sensor",
+                                "sensor.kitchen_temperature",
+                                "sensor.bedroom_temperature",
+                                "sensor.kitchen_light_level",
+                                "sensor.bedroom_light_level",
+                                "sensor.bedroom_time"
+                            ],
+                            "show_header_toggle": true,
+                            "title": "hue",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "binary_sensor.sleepnumber_m7_coleman_is_in_bed",
+                                "binary_sensor.sleepnumber_m7_liz_is_in_bed",
+                                "light.under_bed_lightstrip"
+                            ],
+                            "show_header_toggle": true,
+                            "title": "sleepNumber",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "light.kitchen",
+                                "input_number.brightness_kitchen"
+                            ],
+                            "show_header_toggle": true,
+                            "title": "Kitchen",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "light.bedroom",
+                                "input_number.brightness_bedroom"
+                            ],
+                            "show_header_toggle": true,
+                            "title": "Bedroom",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "automation.brightness_bedroom",
+                                "automation.kitchen_sensor_nightlight",
+                                "automation.kitchen_sensor_daytime",
+                                "automation.bedroom_light_off_1_minutes_after_last_movement_if_bed_empty",
+                                "automation.bedroom_sensor_day_time_2",
+                                "automation.colemaninbed",
+                                "automation.colemanoutbed",
+                                "automation.kitchen_light_sensor_auto_off",
+                                "automation.kitchen_sensor_evening",
+                                "automation.bedroom_sensor_day_time",
+                                "automation.brightness_kitchen"
+                            ],
+                            "title": "Automation",
+                            "type": "entities"
+                        },
+                        {
+                            "entity": "climate.living_room",
+                            "type": "thermostat"
+                        },
+                        {
+                            "entities": [
+                                "sensor.living_room_thermostat_temperature"
+                            ],
+                            "hours_to_show": 72,
+                            "refresh_interval": 0,
+                            "title": "Temperature Graph",
+                            "type": "history-graph"
+                        },
+                        {
+                            "entities": [
+                                "light.hue_ambiance_downlight_3",
+                                "light.living_room",
+                                "light.hue_ambiance_downlight_4",
+                                "light.hue_color_lamp_2",
+                                "light.hue_color_lamp_1",
+                                "light.headboard_lightstrip",
+                                "light.hue_ambiance_downlight_2",
+                                "light.hue_ambiance_downlight_1"
+                            ],
+                            "title": "Light",
+                            "type": "entities"
+                        },
+                        {
+                            "entity": "media_player.tv",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "media_player.castaway",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "media_player.chromecastaudio5358",
+                            "type": "media-control"
+                        },
+                        {
+                            "entities": [
+                                "switch.sound_machine",
+                                "switch.tp_link_switch"
+                            ],
+                            "title": "Switch",
+                            "type": "entities"
+                        },
+                        {
+                            "entity": "weather.dark_sky",
+                            "type": "weather-forecast"
+                        }
+                    ],
+                    "path": "default_view",
+                    "title": "Home"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                "light.kitchen",
+                                "input_number.brightness_kitchen"
+                            ],
+                            "show_header_toggle": true,
+                            "title": "Kitchen",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "light.bedroom",
+                                "input_number.brightness_bedroom"
+                            ],
+                            "show_header_toggle": true,
+                            "title": "Bedroom",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "sensor.kitchen_motion_sensor",
+                                "sensor.bedroom_motion_sensor",
+                                "sensor.kitchen_temperature",
+                                "sensor.bedroom_temperature",
+                                "sensor.kitchen_light_level",
+                                "sensor.bedroom_light_level",
+                                "sensor.bedroom_time"
+                            ],
+                            "show_header_toggle": true,
+                            "title": "hue",
+                            "type": "entities"
+                        }
+                    ],
+                    "path": "poop",
+                    "title": "poop"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                "binary_sensor.sleepnumber_m7_coleman_is_in_bed",
+                                "binary_sensor.sleepnumber_m7_liz_is_in_bed",
+                                "light.under_bed_lightstrip"
+                            ],
+                            "show_header_toggle": true,
+                            "title": "sleepNumber",
+                            "type": "entities"
+                        }
+                    ],
+                    "path": "bed",
+                    "title": "bed"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                "sensor.living_room_thermostat_temperature",
+                                "sensor.bedroom_temperature",
+                                "sensor.sleepnumber_m7_coleman_sleepnumber"
+                            ],
+                            "hours_to_show": 72,
+                            "refresh_interval": 0,
+                            "title": "Temperature Graph",
+                            "type": "history-graph"
+                        },
+                        {
+                            "entity": "sensor.disk_use_percent_home",
+                            "type": "sensor"
+                        },
+                        {
+                            "entity": "climate.living_room",
+                            "type": "thermostat"
+                        }
+                    ],
+                    "path": "graphs",
+                    "title": "Graphs"
+                }
+            ]
+        }
+    },
+    "key": "lovelace",
+    "version": 1
+}

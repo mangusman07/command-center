@@ -3,7 +3,9 @@ home-assistant_v2.db-wal
 home-assistant_v2.db-shm
 home-assistant_v2.db
 home-assistant.log
-.storage/*
+.storage/auth*
+.storage/core*
+.storage/onboarding
 .uuid*
 .node-red/.config.json.backup
 .node-red/.flows_raspberrypi.json.backup
