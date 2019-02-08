@@ -1,6 +1,12 @@
 {
     "data": {
         "config": {
+            "resources": [
+                {
+                    "type": "module",
+                    "url": "/local/thermostat-card.js?v=1"
+                }
+            ],
             "title": "Home Assistant - Welcome",
             "views": [
                 {
@@ -211,6 +217,11 @@
                 {
                     "badges": [],
                     "cards": [
+                        {
+                            "entity": "climate.living_room",
+                            "title": "Bedroom",
+                            "type": "custom:thermostat-card"
+                        },
                         {
                             "entities": [
                                 "sensor.living_room_thermostat_temperature",

@@ -1,3 +1,6 @@
+lovelace:
+  mode: yaml
+
 views:
   - title: main
     icon: mdi:home-outline
