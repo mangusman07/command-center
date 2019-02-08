@@ -162,6 +162,13 @@
                     "badges": [],
                     "cards": [
                         {
+                            "camera_image": "camera.radar",
+                            "entities": [
+                                "camera.radar"
+                            ],
+                            "type": "picture-glance"
+                        },
+                        {
                             "entities": [
                                 "light.kitchen",
                                 "input_number.brightness_kitchen"
@@ -201,23 +208,7 @@
                     "badges": [],
                     "cards": [
                         {
-                            "entities": [
-                                "binary_sensor.sleepnumber_m7_coleman_is_in_bed",
-                                "binary_sensor.sleepnumber_m7_liz_is_in_bed",
-                                "light.under_bed_lightstrip"
-                            ],
-                            "show_header_toggle": true,
-                            "title": "sleepNumber",
-                            "type": "entities"
-                        }
-                    ],
-                    "path": "bed",
-                    "title": "bed"
-                },
-                {
-                    "badges": [],
-                    "cards": [
-                        {
+                            "chevron_size": 50,
                             "entity": "climate.living_room",
                             "title": "Bedroom",
                             "type": "custom:thermostat-card"
@@ -244,6 +235,23 @@
                     ],
                     "path": "graphs",
                     "title": "Graphs"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                "binary_sensor.sleepnumber_m7_coleman_is_in_bed",
+                                "binary_sensor.sleepnumber_m7_liz_is_in_bed",
+                                "light.under_bed_lightstrip"
+                            ],
+                            "show_header_toggle": true,
+                            "title": "sleepNumber",
+                            "type": "entities"
+                        }
+                    ],
+                    "path": "bed",
+                    "title": "bed"
                 }
             ]
         }
