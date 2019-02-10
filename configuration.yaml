@@ -213,11 +213,18 @@ sensor:
         value_template: '{{states.sensor.bedroom_motion_sensor.attributes.last_updated}}'
         unit_of_measurement: time
 
+  - platform: template
+    scan_interval: 1
+    sensors:
+      outside_temperature:
+        friendly_name: 'Outside Temperature Dark Sky'
+        unit_of_measurement: °F
+        value_template: '{{states.weather.dark_sky.attributes.temperature}}'
 
   - platform: template
     sensors:
       num_in_master_bed:
-        friendly_name: "Number of People in Bed"
+        friendly_name: 'Number of People in Bed'
         unit_of_measurement: 'people'
         value_template: >-
           {% if is_state('binary_sensor.sleepnumber_m7_coleman_is_in_bed', 'on') and is_state('binary_sensor.sleepnumber_m7_liz_is_in_bed', 'on') %}
