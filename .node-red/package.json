@@ -13,6 +13,7 @@
     "node-red-contrib-startup-trigger": "~0.1.0",
     "node-red-contrib-stoptimer": "0.0.7",
     "node-red-contrib-time-range-switch": "~0.6.1",
+    "node-red-dashboard": "~2.13.2",
     "node-red-node-ping": "0.0.16",
     "node-red-node-random": "^0.1.2",
     "node-red-node-serialport": "^0.6.8",

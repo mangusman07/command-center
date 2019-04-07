@@ -13,7 +13,7 @@
                     "badges": [
                         "binary_sensor.home_away",
                         "sensor.yr_symbol",
-                        "sensor.google_pixel_xl",
+                        "device_tracker.coleman_pixelxl",
                         "sensor.num_in_master_bed",
                         "sensor.kitchen_switch",
                         "sun.sun",
@@ -88,7 +88,9 @@
                     "badges": [
                         "sensor.bed_occupied",
                         "sensor.sleepnumber_m7_liz_sleepnumber",
-                        "sensor.sleepnumber_m7_coleman_sleepnumber"
+                        "sensor.sleepnumber_m7_coleman_sleepnumber",
+                        "binary_sensor.sleepnumber_m7_coleman_is_in_bed",
+                        "binary_sensor.sleepnumber_m7_liz_is_in_bed"
                     ],
                     "cards": [
                         {
@@ -129,13 +131,33 @@
                         },
                         {
                             "entities": [
-                                "sensor.kitchen_motion_sensor",
-                                "sensor.bedroom_motion_sensor",
-                                "sensor.kitchen_temperature",
-                                "sensor.bedroom_temperature",
-                                "sensor.kitchen_light_level",
-                                "sensor.bedroom_light_level",
-                                "sensor.bedroom_time"
+                                {
+                                    "entity": "sensor.kitchen_motion_sensor"
+                                },
+                                {
+                                    "entity": "sensor.bedroom_motion_sensor"
+                                },
+                                {
+                                    "entity": "sensor.kitchen_temperature"
+                                },
+                                {
+                                    "entity": "sensor.bedroom_temperature"
+                                },
+                                {
+                                    "entity": "sensor.kitchen_light_level"
+                                },
+                                {
+                                    "entity": "sensor.bedroom_light_level"
+                                },
+                                {
+                                    "entity": "sensor.bedroom_time"
+                                },
+                                {
+                                    "entity": "sensor.bedroom_sensor_battery"
+                                },
+                                {
+                                    "entity": "sensor.kitchen_sensor_battery"
+                                }
                             ],
                             "show_header_toggle": true,
                             "title": "hue",
@@ -186,25 +208,6 @@
                 },
                 {
                     "badges": [
-                        "sensor.wireless_router_archer_c7_bytes_received",
-                        "sensor.wireless_router_archer_c7_packets_sec_sent",
-                        "sensor.wireless_router_archer_c7_packets_sent",
-                        "sensor.wireless_router_archer_c7_kbyte_sec_received",
-                        "sensor.wireless_router_archer_c7_kbyte_sec_sent",
-                        "sensor.wireless_router_archer_c7_bytes_sent",
-                        "sensor.wireless_router_archer_c7_packets_sec_received",
-                        "sensor.wireless_router_archer_c7_packets_received",
-                        "sensor.pi_hole_domains_blocked",
-                        "sensor.pi_hole_ads_blocked_today"
-                    ],
-                    "cards": [],
-                    "icon": "mdi:router-wireless",
-                    "panel": true,
-                    "path": "router",
-                    "title": "Router"
-                },
-                {
-                    "badges": [
                         "sensor.memory_free",
                         "sensor.cpu_speed",
                         "sensor.processor_use",
@@ -225,6 +228,25 @@
                     "panel": true,
                     "path": "pi",
                     "title": "Computer"
+                },
+                {
+                    "badges": [
+                        "sensor.wireless_router_archer_c7_bytes_received",
+                        "sensor.wireless_router_archer_c7_packets_sec_sent",
+                        "sensor.wireless_router_archer_c7_packets_sent",
+                        "sensor.wireless_router_archer_c7_kbyte_sec_received",
+                        "sensor.wireless_router_archer_c7_kbyte_sec_sent",
+                        "sensor.wireless_router_archer_c7_bytes_sent",
+                        "sensor.wireless_router_archer_c7_packets_sec_received",
+                        "sensor.wireless_router_archer_c7_packets_received",
+                        "sensor.pi_hole_domains_blocked",
+                        "sensor.pi_hole_ads_blocked_today"
+                    ],
+                    "cards": [],
+                    "icon": "mdi:router-wireless",
+                    "panel": true,
+                    "path": "router",
+                    "title": "Router"
                 }
             ]
         }

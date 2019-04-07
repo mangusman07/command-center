@@ -1,0 +1,6 @@
+{
+    "thermostat-card": {
+        "dir": "/home/homeassistant/.homeassistant/www/",
+        "version": ""
+    }
+}
